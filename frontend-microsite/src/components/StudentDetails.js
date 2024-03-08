@@ -18,7 +18,7 @@ const StudentDetails = ({ student }) => {
             <li class="list-group-item">Sex: {student.sex}</li>
             <li class="list-group-item">LinkedIn: {student.linkedin_link ? <a href={student.linkedin_link} target="_blank" rel="noopener noreferrer" class="text-primary">Profile</a> : '-'}</li>
             <li class="list-group-item">GitHub: {student.github_link ? <a href={student.github_link} target="_blank" rel="noopener noreferrer" class="text-primary">Profile</a> : '-'}</li>
-            <li class="list-group-item">Experience: {student.experience || '- Provided'}</li>
+            <li class="list-group-item">Experience: {student.experience || '- '}</li>
             <li class="list-group-item">Projects: {student.projects || '-'}</li>
         </ul>
     </div>
