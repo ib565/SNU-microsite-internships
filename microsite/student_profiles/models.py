@@ -31,6 +31,7 @@ class Student(models.Model):
     name = models.CharField(max_length=255)
     roll_number = models.CharField(max_length=255, unique=True)
     phone_number = models.CharField(max_length=255, blank=True, null=True, unique=True)
+    sex = models.CharField(max_length=1, choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')])
     snu_email = models.EmailField(max_length=255, unique=True)
     cgpa = models.DecimalField(max_digits=4, decimal_places=2)
     is_available = models.BooleanField(default=True)
