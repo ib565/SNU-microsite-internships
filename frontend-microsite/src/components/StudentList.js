@@ -51,15 +51,17 @@ const StudentList = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
+  <div className="row">
+    <div className="col-md-6" style={{ maxHeight: '100vh', overflowY: 'auto' }}>
       <div className="row justify-content-center">
-        <div className="col-12 col-md-8 col-lg-6">
+        <div className="col-12 col-lg-10">
           <SearchBar setSearchTerm={setSearchTerm} />
           <FilterBar setSchool={setSchool} setMajor={setMajor} setPassingYear={setPassingYear} />
         </div>
       </div>
       <div className="row justify-content-center">
-        <div className="col-12 col-md-8 col-lg-6">
+        <div className="col-12 col-lg-10">
           {students.map(student => (
             <div key={student.id} className="card mb-3" onClick={() => handleStudentClick(student)}>
               <div className="card-body">
@@ -74,8 +76,13 @@ const StudentList = () => {
           ))}
         </div>
       </div>
+    </div>
+    <div className="col-md-6" style={{ position: 'fixed', right: 0, maxHeight: '100vh', overflowY: 'auto' }}>
       {selectedStudent && <StudentDetails student={selectedStudent} />}
     </div>
+  </div>
+</div>
+
   );
 };
 
