@@ -18,7 +18,9 @@ const cardHoverStyle = {
   boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
 };
 
-
+const fontStyle = {
+  fontFamily: '"Roboto", sans-serif',
+};
 
 
 const StudentList = () => {
@@ -98,7 +100,7 @@ const StudentList = () => {
               <div
               key={student.id}
               className="card"
-              style={hoveredCard === student.id ? {...cardStyle, ...cardHoverStyle} : cardStyle}
+              style={hoveredCard === student.id ? {...cardStyle, ...cardHoverStyle, ...fontStyle } : cardStyle}
               onClick={() => handleStudentClick(student)}
               onMouseEnter={() => setHoveredCard(student.id)}
               onMouseLeave={() => setHoveredCard(null)}
