@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import StudentDetails from './StudentDetails';
 import SearchBar from './SearchBar';
 import FilterBar from './FilterBar';
@@ -16,10 +15,6 @@ const studentDetailsStyle = {
 
 const cardHoverStyle = {
   boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-};
-
-const fontStyle = {
-  fontFamily: '"Roboto", sans-serif',
 };
 
 
@@ -100,7 +95,7 @@ const StudentList = () => {
               <div
               key={student.id}
               className="card"
-              style={hoveredCard === student.id ? {...cardStyle, ...cardHoverStyle, ...fontStyle} : cardStyle}
+              style={hoveredCard === student.id ? {...cardStyle, ...cardHoverStyle} : {...cardStyle}}
               onClick={() => handleStudentClick(student)}
               onMouseEnter={() => setHoveredCard(student.id)}
               onMouseLeave={() => setHoveredCard(null)}
