@@ -2,21 +2,7 @@ import React, { useState, useEffect } from 'react';
 import StudentDetails from './StudentDetails';
 import SearchBar from './SearchBar';
 import FilterBar from './FilterBar';
-
-const studentListStyle = {
-    maxHeight: 'calc(100vh - 150px)',
-    overflowY: 'auto',
-  };
-  
-const studentDetailsStyle = {
-  maxHeight: 'calc(100vh - 60px)',
-  overflowY: 'auto',
-};
-
-const cardHoverStyle = {
-  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-};
-
+import './StudentList.css';
 
 const StudentList = () => {
   const [students, setStudents] = useState([]);
@@ -26,16 +12,8 @@ const StudentList = () => {
   const [major, setMajor] = useState('');
   const [passingYear, setPassingYear] = useState('');
   const [CGPA, setCGPA] = useState('');
-  const [hoveredCard, setHoveredCard] = React.useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  const cardStyle = {
-    marginBottom: '1rem',
-    borderRadius: '0.25rem',
-    boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
-    transition: 'box-shadow .15s ease-in-out',
-  };
 
   useEffect(() => {
     async function fetchStudents() {
@@ -90,15 +68,12 @@ const StudentList = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-12" style={studentListStyle}> 
+          <div className="col-12 student-list"> 
             {students.map(student => (
               <div
               key={student.id}
-              className="card"
-              style={hoveredCard === student.id ? {...cardStyle, ...cardHoverStyle} : {...cardStyle}}
+              className="card card-style"
               onClick={() => handleStudentClick(student)}
-              onMouseEnter={() => setHoveredCard(student.id)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
                 <div className="card-body">
                   <div className="d-flex justify-content-between">
@@ -110,15 +85,15 @@ const StudentList = () => {
                     </div>
                   </div>
                   <h6 className="card-subtitle mb-2 text-muted">CGPA: {student.cgpa}</h6>
-                  <p className="card-text">Areas of Interest: {student.area_of_interest.join(', ')}</p>
-                  <p className="card-text">Skills: {student.skills.join(', ')}</p>
+                  <p className="card-text" style={{ marginBottom: '0.5rem' }}>Areas of Interest: {student.area_of_interest.join(', ')}</p>
+                  <p className="card-text" style={{ marginTop: '0.5rem' }}>Skills: {student.skills.join(', ')}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="col-md-6" style={studentDetailsStyle}>
+      <div className="col-md-6 student-details">
         {!selectedStudent ? (
           <div className="text-center p-5">
             <p className="text-muted">Select a student to view details</p>
