@@ -100,7 +100,7 @@ const StudentList = () => {
               <div
               key={student.id}
               className="card"
-              style={hoveredCard === student.id ? {...cardStyle, ...cardHoverStyle, ...fontStyle } : cardStyle}
+              style={hoveredCard === student.id ? {...cardStyle, ...cardHoverStyle, ...fontStyle} : cardStyle}
               onClick={() => handleStudentClick(student)}
               onMouseEnter={() => setHoveredCard(student.id)}
               onMouseLeave={() => setHoveredCard(null)}
