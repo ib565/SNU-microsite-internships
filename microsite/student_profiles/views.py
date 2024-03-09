@@ -48,7 +48,7 @@ class StudentViewSet(viewsets.ModelViewSet):
         passing_year = self.request.query_params.get('passing_year')
 
         if cgpa:
-            queryset = queryset.filter(cgpa=cgpa)
+            queryset = queryset.filter(cgpa__gte=cgpa)
         if school:
             queryset = queryset.filter(school__name=school)
         if major:

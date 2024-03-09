@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function FilterBar({ setSchool, setMajor, setPassingYear }) {
+function FilterBar({ setSchool, setMajor, setPassingYear, setCGPA }) {
   const [filterOptions, setFilterOptions] = useState({
     schools: [],
     majors: [],
@@ -25,7 +25,6 @@ function FilterBar({ setSchool, setMajor, setPassingYear }) {
         setFilterOptions({
           schools: schools,
           majors: majors,
-          passingYears: filterOptions.passingYears, // Keep existing passingYears or update similarly
         });
       } catch (error) {
         console.error("Failed to fetch filter options:", error);
@@ -56,6 +55,15 @@ function FilterBar({ setSchool, setMajor, setPassingYear }) {
         type="number"
         placeholder="Passing Year"
         onChange={(e) => setPassingYear(e.target.value)}
+      />
+
+      <input
+        type="number"
+        placeholder="Minimum CGPA"
+        onChange={(e) => setCGPA(e.target.value)}
+        min="0"
+        max="10"
+        step="0.01"
       />
     </div>
   );
