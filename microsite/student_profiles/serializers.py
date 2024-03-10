@@ -4,25 +4,27 @@ from .models import Student, AreaOfInterest, Skill, School, Major
 class StudentSerializer(serializers.ModelSerializer):
     area_of_interest = serializers.SlugRelatedField(
         many=True,
-        read_only=True,
-        slug_field='name'
+        slug_field='name',
+        queryset=AreaOfInterest.objects.all()
     )
     skills = serializers.SlugRelatedField(
         many=True,
-        read_only=True,
-        slug_field='name'
+        slug_field='name',
+        queryset=Skill.objects.all()
     )
     school = serializers.SlugRelatedField(
-        read_only=True,
-        slug_field='name'
+        slug_field='name',
+        queryset=School.objects.all()
     )
     major = serializers.SlugRelatedField(
-        read_only=True,
-        slug_field='name'
+        slug_field='name',
+        queryset=Major.objects.all()
     )
+
     class Meta:
         model = Student
         fields = '__all__'
+
 
 class SchoolSerializer(serializers.ModelSerializer):
     class Meta:
