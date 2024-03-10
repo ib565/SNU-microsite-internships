@@ -55,16 +55,20 @@ const StudentList = () => {
   return (
     <div className="container-fluid">
     <div className="row">
-      <div className="col-12 bg-primary text-white py-2">
-        <h1 className="text-center">Shiv Nadar University Student Browser</h1>
+      <div className="bg-primary text-white text-center py-3">
+        <h2 className="font-weight-bold m-0">Shiv Nadar University Student Browser</h2>
       </div>
     </div>
     <div className="row">
       <div className="col-md-6">
         <div className="row">
           <div className="col-12 mb-2">
-            <SearchBar setSearchTerm={setSearchTerm} />
-            <FilterBar setSchool={setSchool} setMajor={setMajor} setPassingYear={setPassingYear} setCGPA={setCGPA} />
+            <div className='my-3'>
+              <SearchBar setSearchTerm={setSearchTerm} />
+            </div>
+            <div className='mb-2'>
+              <FilterBar setSchool={setSchool} setMajor={setMajor} setPassingYear={setPassingYear} setCGPA={setCGPA} />
+            </div>
           </div>
         </div>
         <div className="row">
@@ -74,7 +78,7 @@ const StudentList = () => {
               key={student.id}
               className="card card-style"
               onClick={() => handleStudentClick(student)}
-            >
+              >
                 <div className="card-body">
                   <div className="d-flex justify-content-between">
                     <h5 className="card-title text-primary">
@@ -93,7 +97,7 @@ const StudentList = () => {
           </div>
         </div>
       </div>
-      <div className="col-md-6 student-details">
+      <div className="col-md-6 student-details mt-3">
         {!selectedStudent ? (
           <div className="text-center p-5">
             <p className="text-muted">Select a student to view details</p>
