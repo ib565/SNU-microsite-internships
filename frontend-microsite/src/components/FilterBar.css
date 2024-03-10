@@ -1,0 +1,19 @@
+.filter-select,
+.filter-input {
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+.filter-input {
+    max-width: 150px;
+}
+
+.filter-input[type="number"]::-webkit-inner-spin-button,
+.filter-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter-input[type="number"] {
+  -moz-appearance: textfield;
+}
