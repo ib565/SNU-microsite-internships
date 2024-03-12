@@ -55,8 +55,8 @@ const StudentList = () => {
   return (
     <div className="container-fluid">
     <div className="row">
-      <div className="bg-primary text-white text-center py-3">
-        <h2 className="font-weight-bold m-0">Shiv Nadar University Student Browser</h2>
+      <div className="text-primary text-center py-3">
+        <h2 className="m-0 header">Student Profile Browser</h2>
       </div>
     </div>
     <div className="row">
