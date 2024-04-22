@@ -45,3 +45,6 @@ class Student(models.Model):
     github_link = models.URLField(blank=True, null=True)
     experience = models.CharField(max_length=512, blank=True, null=True)
     projects = models.TextField(max_length=512, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
