@@ -13,7 +13,6 @@ function ContactModal({ showModal, toggleModal, handleSubmit }) {
                             <div className="modal-body">
                                 <form>
                                     <div className="form-group">
-                                        <label htmlFor="messageText">Message</label>
                                         <textarea
                                             className="form-control"
                                             id="messageText"
