@@ -24,7 +24,7 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <h2>Employer Login</h2>
         <div className="form-group">
-          <label>Login ID or email:</label>
+          <label>Employer ID or email:</label>
           <input
             type="text"
             name="username"
