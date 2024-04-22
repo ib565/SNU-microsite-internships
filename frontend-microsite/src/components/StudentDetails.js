@@ -3,8 +3,8 @@ import './StudentDetails.css';
 
 const StudentDetails = ({ student }) => {
   return (
-    <div className="card student-card">
-        <div className="card-header bg-primary text-white">
+    <div className="student-card card">
+        <div className="card-header text-white bg-primary header-bg-color">
             <h3>{student.name}</h3>
         </div>
         <div className="card-body">

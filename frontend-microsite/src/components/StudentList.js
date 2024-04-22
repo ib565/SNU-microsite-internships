@@ -81,7 +81,7 @@ const StudentList = () => {
               >
                 <div className="card-body">
                   <div className="d-flex justify-content-between">
-                    <h5 className="card-title text-primary">
+                    <h5 className="card-title text-primary custom-text-color">
                       {student.name}
                     </h5>
                     <div className="text-end">
