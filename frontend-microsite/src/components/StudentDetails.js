@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './StudentDetails.css';
+import ContactModal from './ContactModal';
 
 const StudentDetails = ({ student }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => setShowModal(!showModal);
+
+  const handleSubmit = () => {
+      alert('Message successfully sent!');
+      toggleModal();  // Close modal after submission
+  };
   return (
     <div className="student-card card">
         <div className="card-header text-white bg-primary header-bg-color">
@@ -23,7 +32,14 @@ const StudentDetails = ({ student }) => {
             <p>Projects: {student.projects || '-'}</p>
             <div className="student-details-actions text-center">
               <button type="button" className="btn btn-primary me-2">Request Resume</button>
-              <button type="button" className="btn btn-secondary">Contact Student</button>
+              <button className="btn btn-primary" onClick={toggleModal}>
+                Contact Student
+              </button>
+              <ContactModal
+                showModal={showModal}
+                toggleModal={toggleModal}
+                handleSubmit={handleSubmit}
+              />
             </div>
 
         </div>
