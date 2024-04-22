@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './StudentDetails.css';
 import ContactModal from './ContactModal';
-import SimplePopup from './SimplePopup';
 
 const StudentDetails = ({ student }) => {
   const [showModal, setShowModal] = useState(false);
