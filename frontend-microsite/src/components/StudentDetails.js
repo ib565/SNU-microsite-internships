@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import './StudentDetails.css';
 import ContactModal from './ContactModal';
+import SimplePopup from './SimplePopup';
 
 const StudentDetails = ({ student }) => {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => setShowModal(!showModal);
 
+  const handleRequestResume = () => {
+    alert('Resume requested!');
+  };
+
   const handleSubmit = () => {
       alert('Message successfully sent!');
-      toggleModal();  // Close modal after submission
+      toggleModal();
   };
   return (
     <div className="student-card card">
@@ -31,7 +36,7 @@ const StudentDetails = ({ student }) => {
             <p>Experience: {student.experience || '- '}</p>
             <p>Projects: {student.projects || '-'}</p>
             <div className="student-details-actions text-center">
-              <button type="button" className="btn btn-primary me-2">Request Resume</button>
+              <button type="button" className="btn btn-primary me-2" onClick={handleRequestResume}>Request Resume</button>              
               <button className="btn btn-primary" onClick={toggleModal}>
                 Contact Student
               </button>
