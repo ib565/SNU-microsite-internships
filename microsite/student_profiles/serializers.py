@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Student, AreaOfInterest, Skill, School, Major
+from .models import Student, AreaOfInterest, Skill, School, Major, Employer, Opportunity
 
 class StudentSerializer(serializers.ModelSerializer):
     area_of_interest = serializers.SlugRelatedField(
@@ -35,3 +35,13 @@ class MajorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Major
         fields = ['id', 'name']
+
+class EmployerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employer
+        fields = ['id', 'name', 'email', 'phone_number', 'description']
+
+class OpportunitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Opportunity
+        fields = ['id', 'employer', 'title', 'description', 'location', 'type', 'posted_on']

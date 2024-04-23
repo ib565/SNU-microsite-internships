@@ -10,5 +10,7 @@ urlpatterns = [
     path("", include(router.urls)),
     path('schools/', views.SchoolListView.as_view(), name='school-list'),
     path('majors/', views.MajorListView.as_view(), name='major-list'),
+    path('employers/', views.EmployerListCreateView.as_view(), name='employer-list'),
+    path('opportunities/', views.OpportunityListCreateView.as_view(), name='opportunity-list'),
     path("index/", views.index, name="index"),
 ]

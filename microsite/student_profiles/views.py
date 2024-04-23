@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from rest_framework import viewsets, filters
-from rest_framework.generics import ListAPIView
-from .models import Student, School, Major
-from .serializers import StudentSerializer, SchoolSerializer, MajorSerializer
+from rest_framework.generics import ListAPIView, ListCreateAPIView
+from .models import Student, School, Major, Employer, Opportunity
+from .serializers import EmployerSerializer, OpportunitySerializer, StudentSerializer, SchoolSerializer, MajorSerializer
 
 def index(request):
     return HttpResponse("Hello, world. You're at the student profiles index.")
@@ -65,3 +65,11 @@ class SchoolListView(ListAPIView):
 class MajorListView(ListAPIView):
     queryset = Major.objects.all()
     serializer_class = MajorSerializer
+
+class EmployerListCreateView(ListCreateAPIView):
+    queryset = Employer.objects.all()
+    serializer_class = EmployerSerializer
+
+class OpportunityListCreateView(ListCreateAPIView):
+    queryset = Opportunity.objects.all()
+    serializer_class = OpportunitySerializer
