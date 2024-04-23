@@ -68,7 +68,7 @@ class Opportunity(models.Model):
     skills_required = models.ManyToManyField(Skill, related_name='opportunities', blank=True)
     is_open = models.BooleanField(default=True)
     posted_on = models.DateField(auto_now_add=True)
-    last_date = models.DateField()
+    last_date = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} by {self.employer.name}"
