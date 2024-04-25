@@ -3,6 +3,8 @@ SNU microsite where interested parties can browse students and contact them for 
 
 Django and ReactJS
 
+Jira link: https://snu-team-nnmxt365.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline
+
 ## Description
 SNU-microsite-internships is a web application built using Django and ReactJS. It serves as a platform where interested parties can browse students and contact them for projects and internships.
 
